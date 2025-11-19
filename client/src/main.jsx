@@ -11,7 +11,11 @@ import { ClerkProvider } from '@clerk/clerk-react'
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
 if (!PUBLISHABLE_KEY) {
-    throw new Error('Missing Publishable Key')
+    console.error('Missing VITE_CLERK_PUBLISHABLE_KEY environment variable');
+    // 在开发环境中显示错误，但不阻止应用运行
+    if (import.meta.env.DEV) {
+        throw new Error('Missing Publishable Key. Please set VITE_CLERK_PUBLISHABLE_KEY in your .env file');
+    }
 }
 
 createRoot(document.getElementById('root')).render(
