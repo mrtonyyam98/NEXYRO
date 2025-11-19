@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Environment variables (包含敏感信息，不要提交)
+.env
+.env.local
+.env.*.local
+client/.env
+server/.env
+
+# Build outputs
+dist
+build
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+.cache
